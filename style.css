@@ -1,9 +1,9 @@
 /* Global Styling */
 body {
-    font-family: 'Carlito', sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #428f6d;
+    background-color: #2a5844;
     color: #232121; /* warm gray for better readability */
     line-height: 1.6;
 }
@@ -341,7 +341,7 @@ section + section {
     /* color: #9d9a9b !important;  */
     /* color: #cf9b39 !important;  */
     /* color: #afaa9f !important;  */
-    color: #c5ad7a !important;
+    color: #99519a  !important;
     margin-top: 25px;
     margin-bottom: 10px;
     font-weight: bold !important; /* Make it bold */
