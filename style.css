@@ -1,16 +1,13 @@
 /* Global Styling */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Carlito', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0fff4; /* fresh minty green */
-    color: #444444; /* warm gray for better readability */
+    background-color: #428f6d;
+    color: #232121; /* warm gray for better readability */
     line-height: 1.6;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif; /* elegant + stylish headings */
-}
 
 /* Container Layout */
 .container {
@@ -22,7 +19,7 @@ h1, h2, h3 {
 
 /* Left Profile Section */
 .profile {
-    background: white;
+    background: rgb(149, 203, 178);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -95,7 +92,7 @@ h1, h2, h3 {
 
 /* Section Styling */
 section {
-    background: white;
+    background: rgb(149, 203, 178);
     padding: 10px 15px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -130,7 +127,7 @@ h1, h2 {
     /* color: #9d9a9b !important; */
     /* color: #cf9b39 !important;  */
     /* color: #afaa9f !important;  */
-    color: #c5ad7a !important;
+    color: #99519a !important;
 
 }
 
@@ -181,7 +178,7 @@ h1, h2 {
 
 /* Publications Section */
 .publications {
-    background: white;
+    background: rgb(149, 203, 178);
     padding: 8px 15px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -252,7 +249,7 @@ h1, h2 {
 
 /* GEE Apps Section */
 .gee-apps {
-    background: white;
+    background: rgb(149, 203, 178);
     padding: 8px 15px;
     /* margin-top: -10px; */
     margin-bottom: 10px;
