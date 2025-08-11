@@ -3,7 +3,7 @@ body {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #2a5844;
+    background-color: #f8f8f8;
     color: #232121; /* warm gray for better readability */
     line-height: 1.6;
 }
@@ -127,7 +127,7 @@ h1, h2 {
     /* color: #9d9a9b !important; */
     /* color: #cf9b39 !important;  */
     /* color: #afaa9f !important;  */
-    color: #99519a !important;
+    color: #69437f !important;
 
 }
 
