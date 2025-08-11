@@ -8,13 +8,24 @@ body {
     line-height: 1.6;
 }
 
-
 /* Container Layout */
 .container {
     display: flex;
     max-width: 1100px;
     margin: auto;
     padding: 20px;
+}
+
+/* Ensure all sections in the right column have same width */
+.content section,
+.content .about,
+.content .interests,
+.content .affiliations,
+.content .education,
+.content .publications,
+.content .gee-apps {
+    width: 100%; /* Full width of .content */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 /* Left Profile Section */
