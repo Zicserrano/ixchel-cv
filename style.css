@@ -135,7 +135,7 @@ h1, h2 {
 .interests-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px 12px;
+    gap: 5px 15px;
     list-style-type: none;
     padding: 0;
 }
@@ -166,7 +166,7 @@ h1, h2 {
 
 .affiliations,
 .education {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 /* Email Styling */
