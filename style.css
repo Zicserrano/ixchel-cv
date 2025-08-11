@@ -35,7 +35,7 @@ body {
 
 /* Left Profile Section */
 .profile {
-    background: rgba(182, 139, 139, 0.852);
+    background: rgba(255, 255, 255, 0.852);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -108,7 +108,7 @@ body {
 
 /* Section Styling */
 section {
-    background:  rgba(182, 139, 139, 0.852);
+    background:  rgba(255, 255, 255, 0.852);
     padding: 10px 15px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -194,7 +194,7 @@ h1, h2 {
 
 /* Publications Section */
 .publications {
-    background: rgba(182, 139, 139, 0.852);
+    background: rgba(254, 254, 254, 0.852);
     padding: 8px 15px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -265,7 +265,7 @@ h1, h2 {
 
 /* GEE Apps Section */
 .gee-apps {
-    background: rgba(182, 139, 139, 0.852);
+    background: rgba(255, 255, 255, 0.852);
     padding: 8px 20px;
     /* margin-top: -10px; */
     margin-bottom: 10px;
@@ -350,7 +350,7 @@ section + section {
 
 
 .journey-title {
-    font-family: "American Typewriter", serif;
+    font-family: "Futura", serif;
     font-size: 1.3em;
     font-style: normal;
     text-align: center;
@@ -417,7 +417,7 @@ section + section {
   display: block;
   width: 100%;
   box-sizing: border-box;
-  background: rgba(203, 149, 149, 0.486);
+  background: rgba(254, 254, 254, 0.486);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,.1);
   padding: 10px 15px;
@@ -428,7 +428,7 @@ section + section {
 .content .about,
 .content .interests,
 .content section {
-  background: rgba(203, 149, 149, 0.486) !important;
+  background: rgba(255, 255, 255, 0.486) !important;
 }
 .content {
   display: flex;
@@ -451,7 +451,7 @@ section + section {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,.1);
   /* keep your pink or use overlay on the page bg image */
-  background: rgba(203, 149, 149, 0.486);
+  background: rgba(255, 255, 255, 0.734);
   /* or, for a lighter overlay on the background image:
      background: rgba(255,255,255,0.85);
   */
@@ -483,7 +483,7 @@ section + section {
   padding: 12px 16px;
   margin: 0;
   border-radius: 12px;
-  background: rgba(203, 149, 149, 0.844); /* pink overlay on bg image */
+  background: rgba(249, 249, 249, 0.844); /* pink overlay on bg image */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
