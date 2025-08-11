@@ -411,3 +411,22 @@ section + section {
   margin: inherit !important;
   padding: inherit !important;
 }
+
+.content .about,
+.content .interests {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(203, 149, 149, 0.486);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+  padding: 10px 15px;
+  margin: 0 0 10px 0;
+}
+
+/* (optional) if you use the page/background image and need stronger override */
+.content .about,
+.content .interests,
+.content section {
+  background: rgba(203, 149, 149, 0.486) !important;
+}
