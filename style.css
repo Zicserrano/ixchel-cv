@@ -514,10 +514,3 @@ section + section {
 }
 
 /* Remove any inner backgrounds to avoid double boxes */
-.content > section > * {
-  background: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
