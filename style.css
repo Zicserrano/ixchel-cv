@@ -1,19 +1,19 @@
-/* Global Styling */
-
-
 body {
     font-family: 'Futura', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('240909-AZO1109-CUBES-CS-2_SE\(UL\).jpg'); /* path to your image */
-    background-size: cover;     /* fills the screen */
+    background-image: url('240909-AZO1109-CUBES-CS-2_SE(UL).jpg'); /* path to your image */
+    background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* stays fixed when scrolling */
+    background-attachment: fixed;
     background-position: center;
-    color: #000000;
+    color: #000;
     line-height: 1.6;
 }
-/* Container Layout */
+
+/* ===========================
+   CONTAINER LAYOUT
+=========================== */
 .container {
     display: flex;
     max-width: 1100px;
@@ -21,24 +21,14 @@ body {
     padding: 30px;
 }
 
-/* Ensure all sections in the right column have same width */
-.content section,
-.content .about,
-.content .interests,
-.content .affiliations,
-.content .education,
-.content .publications,
-.content .gee-apps {
-    width: 100%; /* Full width of .content */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
-}
-
-/* Left Profile Section */
+/* ===========================
+   LEFT PROFILE SECTION
+=========================== */
 .profile {
-    background: rgba(255, 255, 255, 0.852);
+    background: rgba(255, 255, 255, 0.85);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 25%;
     min-width: 250px;
@@ -51,22 +41,11 @@ body {
     object-fit: cover;
     display: block;
     margin: 0 auto 15px;
-} 
-
-.profile h2 {
-    margin: 10px 0;
-    font-size: 1.5em;
 }
 
-.profile h3 {
-    font-size: 1.1em;
-    color: #3c3939;
-}
-
-.profile p {
-    font-size: 0.9em;
-    color: #3c3939;
-}
+.profile h2 { margin: 10px 0; font-size: 1.5em; }
+.profile h3 { font-size: 1.1em; color: #3c3939; }
+.profile p  { font-size: 0.9em; color: #3c3939; }
 
 /* Icons */
 .icons a {
@@ -75,368 +54,44 @@ body {
     color: #0073e6;
     text-decoration: none;
 }
-
-.icons a:hover {
-    color: #005bb5;
-}
-
-/* CV Download Button */
-.cv-btn {
-    color: #0073e6 !important; /* Blue text */
-    text-decoration: none !important; /* No underline by default */
-    font-weight: bold; /* Make it stand out */
-    font-size: 2em !important; /* Increase font size */
-    background: none !important; /* Remove any background */
-    padding: 0 !important; /* Remove padding */
-    border: none !important; /* No border */
-    display: inline; /* Behave like a normal link */
-    margin-top: 5px !important; /* Reduce space between email and CV */
-}
-
-.cv-btn:hover {
-    color: #005bb5 !important; /* Darker blue on hover */
-    text-decoration: underline !important; /* Underline on hover */
-}
-
-
-/* Right Content Section */
-.content {
-    flex: 1.5;
-    flex-grow: 2;
-    margin-left: 30px;
-}
-
-/* Section Styling */
-section {
-    background:  rgba(255, 255, 255, 0.852);
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0);
-}
-
-
-/* Text Styling */
-.content p {
-    line-height: 1.2;
-    margin-bottom: 3px;
-}
-
-.about p {
-    margin-bottom: 0px !important;
-    padding-bottom: 0px !important;
-    line-height: 1;
-}
-
-.about {
-    padding-bottom: 5px !important;
-}
-
-/* Section Titles */
-h1, h2 {
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 8px;
-    /* color: #008E97 !important; */
-    /* color: #9d4a74 !important; */
-    /* color: #af138a !important;  */
-    /* color: #9d9a9b !important; */
-    /* color: #cf9b39 !important;  */
-    /* color: #afaa9f !important;  */
-    color: #000000 !important;
-
-}
-
-/* Interests Section */
-.interests-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px 15px;
-    list-style-type: none;
-    padding: 0;
-}
-
-.interests-list li {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    padding: 1px 8px;
-    flex: 0 1 auto;
-}
-
-/* Reduced Spacing */
-.interests p,
-.affiliations p,
-.education p {
-    line-height: 1.2;
-    padding: 2px 0;
-    margin: 0;
-    word-wrap: break-word;
-}
-.interests-list li {
-    line-height: 1.2;
-    padding: 2px 0;
-}
-
-
-
-.affiliations,
-.education {
-    padding-bottom: 15px;
-}
+.icons a:hover { color: #005bb5; }
 
 /* Email Styling */
 .email {
     font-size: 0.9em;
     color: #555;
-    margin-bottom: 5px !important; /* Reduce space below the email */
+    margin-bottom: 5px !important;
 }
 
-/* Publications Section */
-.publications {
-    background: rgba(254, 254, 254, 0.852);
-    padding: 8px 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0);
-}
-
-.publications h2 {
-    font-size: 1.2em;
-    color: #0073e6;
-    margin-bottom: 5px;
-}
-
-.publications ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.publications ul li {
-    padding: 2px 0;
-    line-height: 1.2;
-}
-
-/* Quote Styling */
-.quote {
-    font-family: "American Typewriter", serif !important;
-    font-size: 0.8em !important;
-    font-style: normal;
-    text-align: center;
-    color: #222;
-    margin-top: 10px;
-    padding: 8px 10px 4px 10px; /* reduced bottom padding */
-    line-height: 1.4 !important;
-    margin-bottom: 0 !important; /* remove extra margin */
-}
-
-.quote-author {
-    font-size: 1.0em !important;
-    font-weight: bold;
-    display: block;
-    margin-top: 2px;
-}
-
-/* Map Styling */
-.map-image {
-    width: 100%;
-    max-width: 250px;
-    display: block;
-    margin: 15px auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* CV Button */
+/* CV Button Link Style */
 .cv-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 15px;
-    background: #0073e6;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
+    color: #0073e6 !important;
     font-weight: bold;
+    font-size: 2em !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    display: inline;
+    margin-top: 5px !important;
 }
-
 .cv-btn:hover {
-    background: #005bb5;
-}
-
-/* GEE Apps Section */
-.gee-apps {
-    background: rgba(255, 255, 255, 0.852);
-    padding: 8px 20px;
-    /* margin-top: -10px; */
-    margin-bottom: 10px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.gee-apps h2 {
-    font-size: 1.2em;
-    color: #0073e6;
-    margin-bottom: 5px;
-}
-
-.gee-apps ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.gee-apps li {
-    padding: 2px 0;
-    line-height: 1.2;
-}
-
-.gee-apps li::before {
-    content: none;
-}
-
-/* Standardized Link Styling */
-a {
-    color: #0073e6 !important; /* Blue color */
-    text-decoration: none !important;
-    font-weight: normal;
-}
-
-a:hover {
     color: #005bb5 !important;
     text-decoration: underline !important;
 }
 
-/* Prevent visited links from turning purple */
-a:visited {
-    color: #0073e6 !important;
-    text-decoration: none !important;
-}
-
-/* Specific Sections */
-.affiliations a,
-.education a,
-.publications a,
-.gee-apps a {
-    color: #0073e6 !important;
-    font-weight: normal;
-}
-
-.affiliations a:hover,
-.education a:hover,
-.publications a:hover,
-.gee-apps a:hover {
-    color: #005bb5 !important;
-    text-decoration: underline !important;
-}
-
-
-/* Consistent spacing between section titles and first content */
-section > p:first-of-type,
-section > ul:first-of-type {
-    margin-top: 0px;
-}
-
-/* Consistent spacing below last content inside each section */
-section p:last-of-type,
-section ul:last-of-type,
-section li:last-of-type {
-    margin-bottom: 0; /* or 5px for a bit more spacing */
-}
-
-section + section {
-    margin-top: -8px;
-}
-
-
-
-.journey-title {
-    font-family: "Futura", serif;
-    font-size: 1.3em;
-    font-style: normal;
-    text-align: center;
-    /* color: #9d9a9b !important;  */
-    /* color: #cf9b39 !important;  */
-    /* color: #afaa9f !important;  */
-    color: #000000  !important;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-weight: bold !important; /* Make it bold */
-}
-
-/* === RIGHT COLUMN: make every card the same width & box model === */
-
-/* Stack children and let them stretch */
+/* ===========================
+   RIGHT CONTENT COLUMN
+=========================== */
 .content {
-  display: flex;
-  flex-direction: column;
+    flex: 1.5;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* consistent spacing between cards */
 }
 
-/* Direct children of .content: same width + spacing */
-.content > * {
-  align-self: stretch;         /* fill the column */
-  width: 100% !important;      /* override any lingering widths */
-  box-sizing: border-box;
-  margin: 0 0 10px 0 !important;
-  padding: 10px 15px !important;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,.1);
-  background: rgba(182, 139, 139, 0.852); /* or your image bg */
-}
-
-/* If you use an image background, uncomment this: */
-/*
-.content > * {
-  background-image: url('images/background-pattern.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-*/
-
-/* Neutralize section-specific box styles so they don't fight the unified rule */
-.content .publications,
-.content .gee-apps {
-  background: none !important;   /* unified background above */
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Make sure generic <section> tags also inherit the same look */
-.content section {
-  background: inherit !important;
-  box-shadow: inherit !important;
-  border-radius: inherit !important;
-  margin: inherit !important;
-  padding: inherit !important;
-}
-
-.content .about,
-.content .interests {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  background: rgba(254, 254, 254, 0.486);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,.1);
-  padding: 10px 15px;
-  margin: 0 0 10px 0;
-}
-
-/* (optional) if you use the page/background image and need stronger override */
-.content .about,
-.content .interests,
-.content section {
-  background: rgba(255, 255, 255, 0.486) !important;
-}
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px; /* consistent spacing */
-}
-
-/* Apply the card look only to direct children of .content */
+/* Unified card style for ALL direct children */
 .content > section,
 .content > .about,
 .content > .interests,
@@ -444,73 +99,115 @@ section + section {
 .content > .education,
 .content > .publications,
 .content > .gee-apps {
-  width: 100% !important;
-  box-sizing: border-box;
-  margin: 0 !important;
-  padding: 12px 16px !important;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,.1);
-  /* keep your pink or use overlay on the page bg image */
-  background: rgba(255, 255, 255, 0.734);
-  /* or, for a lighter overlay on the background image:
-     background: rgba(255,255,255,0.85);
-  */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.75); /* overlay on background image */
+    /* To use an image inside each card:
+       background-image: url('your-image.png');
+       background-size: cover;
+       background-position: center;
+    */
 }
 
-/* Kill extra inner backgrounds/padding that cause the double-box look */
-.content section,
-.content .publications,
-.content .gee-apps {
-  background: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Make generic <section> inherit the unified card look from its parent rule */
-.content section {
-  background: inherit !important;
-  box-shadow: inherit !important;
-  border-radius: inherit !important;
-  padding: inherit !important;
-  margin: inherit !important;
-}
-
-.content > * {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px 16px;
-  margin: 0;
-  border-radius: 12px;
-  background: rgba(249, 249, 249, 0.844); /* pink overlay on bg image */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Kill any nested backgrounds so there's only one visible box */
+/* Remove inner section backgrounds to prevent double-box look */
 .content > * > * {
-  background: transparent !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* Stack and unify cards */
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* ===========================
+   SECTION SPECIFIC STYLES
+=========================== */
+.about p { margin-bottom: 0 !important; line-height: 1; }
+.interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 15px;
+    list-style: none;
+    padding: 0;
+}
+.interests-list li { white-space: nowrap; padding: 1px 8px; }
+
+/* Reduced spacing for specific sections */
+.interests p,
+.affiliations p,
+.education p {
+    line-height: 1.2;
+    margin: 0;
 }
 
-/* One card per direct child of .content */
-.content > section {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px 16px;
-  margin: 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,.1);
-  background: rgba(203,149,149,0.486); /* or your overlay */
+/* Publications List */
+.publications ul,
+.gee-apps ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.publications li,
+.gee-apps li {
+    padding: 2px 0;
+    line-height: 1.2;
 }
 
-/* Remove any inner backgrounds to avoid double boxes */
+/* Links */
+a {
+    color: #0073e6 !important;
+    text-decoration: none !important;
+}
+a:hover { color: #005bb5 !important; text-decoration: underline !important; }
+a:visited { color: #0073e6 !important; }
+
+/* ===========================
+   QUOTE STYLING
+=========================== */
+.quote {
+    font-family: "American Typewriter", serif !important;
+    font-size: 0.8em !important;
+    text-align: center;
+    color: #222;
+    margin-top: 10px;
+    padding: 8px 10px 4px;
+    line-height: 1.4 !important;
+}
+.quote-author {
+    font-size: 1em !important;
+    font-weight: bold;
+    display: block;
+    margin-top: 2px;
+}
+
+/* ===========================
+   IMAGE STYLING
+=========================== */
+.map-image {
+    width: 100%;
+    max-width: 250px;
+    margin: 15px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ===========================
+   TITLES
+=========================== */
+h1, h2 {
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #000 !important;
+}
+.journey-title {
+    font-family: "Futura", serif;
+    font-size: 1.3em;
+    font-weight: bold !important;
+    text-align: center;
+    color: #000 !important;
+    margin: 25px 0 10px;
+}
