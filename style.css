@@ -216,23 +216,23 @@ h1, h2 {
 .pdf-link:hover {
     all: revert;
 }
+
 .pdf-link {
     display: inline-flex !important;
     align-items: center;
     gap: 6px;
-    color: #c0392b !important;
+    color: #2a9d8f !important;
     font-weight: 600;
     text-decoration: none !important;
-    background: rgba(43, 83, 196, 0.08) !important;
+    background: rgba(42, 157, 143, 0.08) !important;
     padding: 3px 10px !important;
-    border-radius: 20px;
-    border: 1px solid rgba(43, 83, 196, 0.08);
+    border-radius: 20px !important;
+    border: 1px solid rgba(42, 157, 143, 0.3) !important;
     transition: all 0.2s ease;
 }
 
 .pdf-link:hover {
-    background: #c0392b !important;
+    background: #2a9d8f !important;
     color: white !important;
     text-decoration: none !important;
-    box-shadow: 0 3px 10px rgba(43, 83, 196, 0.08);
-}
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.4) !important;
