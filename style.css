@@ -65,21 +65,26 @@ body {
 
 /* CV Button Link Style */
 .cv-btn {
-    color: #0073e6 !important;
-    font-weight: bold;
-    font-size: 2em !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    color: #2a9d8f !important;
+    font-weight: 600;
+    font-size: 1.1em !important;
     text-decoration: none !important;
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-    display: inline;
-    margin-top: 5px !important;
+    background: rgba(42, 157, 143, 0.08) !important;
+    padding: 5px 18px !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(42, 157, 143, 0.3) !important;
+    transition: all 0.2s ease;
+    margin-top: 8px !important;
 }
 .cv-btn:hover {
-    color: #005bb5 !important;
-    text-decoration: underline !important;
+    background: #2a9d8f !important;
+    color: white !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.4) !important;
 }
-
 /* ===========================
    RIGHT CONTENT COLUMN
 =========================== */
