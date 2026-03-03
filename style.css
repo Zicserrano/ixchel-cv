@@ -213,21 +213,22 @@ h1, h2 {
 }
 
 .pdf-link {
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
     gap: 6px;
-    color: #c0392b;
+    color: #c0392b !important;
     font-weight: 600;
-    text-decoration: none;
-    background: rgba(192, 57, 43, 0.08);
-    padding: 3px 10px;
+    text-decoration: none !important;
+    background: rgba(192, 57, 43, 0.08) !important;
+    padding: 3px 10px !important;
     border-radius: 20px;
     border: 1px solid rgba(192, 57, 43, 0.3);
     transition: all 0.2s ease;
 }
 
 .pdf-link:hover {
-    background: #c0392b;
-    color: white;
+    background: #c0392b !important;
+    color: white !important;
+    text-decoration: none !important;
     box-shadow: 0 3px 10px rgba(192, 57, 43, 0.3);
 }
