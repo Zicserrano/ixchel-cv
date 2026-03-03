@@ -212,6 +212,10 @@ h1, h2 {
     margin: 25px 0 10px;
 }
 
+.pdf-link,
+.pdf-link:hover {
+    all: revert;
+}
 .pdf-link {
     display: inline-flex !important;
     align-items: center;
