@@ -63,6 +63,82 @@ body {
     margin-bottom: 5px !important;
 }
 
+.content {
+    flex: 1.5;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.content > section,
+.content > .about,
+.content > .interests,
+.content > .affiliations,
+.content > .education,
+.content > .publications,
+.content > .gee-apps {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.about p { margin-bottom: 0 !important; line-height: 1; }
+.interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 15px;
+    list-style: none;
+    padding: 0;
+}
+.interests-list li { white-space: nowrap; padding: 1px 8px; }
+
+.interests p, .affiliations p, .education p { line-height: 1.2; margin: 0; }
+
+.publications ul, .gee-apps ul { list-style: none; padding: 0; margin: 0; }
+.publications li, .gee-apps li { padding: 2px 0; line-height: 1.2; }
+
+h1, h2 { font-size: 1.2em; margin-top: 0; margin-bottom: 8px; color: #000 !important; }
+.journey-title {
+    font-family: "Futura", serif;
+    font-size: 1.3em;
+    font-weight: bold !important;
+    text-align: center;
+    color: #000 !important;
+    margin: 25px 0 10px;
+}
+
+.map-image {
+    width: 100%;
+    max-width: 250px;
+    margin: 15px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.quote {
+    font-family: "American Typewriter", serif !important;
+    font-size: 0.8em !important;
+    text-align: center;
+    color: #222;
+    margin-top: 10px;
+    padding: 8px 10px 4px;
+    line-height: 1.4 !important;
+}
+.quote-author { font-size: 1em !important; font-weight: bold; display: block; margin-top: 2px; }
+
+/* ===========================
+   TEAL LINK STYLES
+=========================== */
+a { color: #2a9d8f !important; text-decoration: none !important; }
+a:visited { color: #2a9d8f !important; }
+
+
 /* CV Button Link Style */
 .cv-btn {
     display: inline-flex !important;
@@ -88,140 +164,26 @@ body {
 /* ===========================
    RIGHT CONTENT COLUMN
 =========================== */
-.content {
-    flex: 1.5;
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* consistent spacing between cards */
-}
-
-/* Unified card style for ALL direct children */
-.content > section,
-.content > .about,
-.content > .interests,
-.content > .affiliations,
-.content > .education,
-.content > .publications,
-.content > .gee-apps {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 12px 16px;
-    margin: 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background: rgba(255, 255, 255, 0.75); /* overlay on background image */
-    /* To use an image inside each card:
-       background-image: url('your-image.png');
-       background-size: cover;
-       background-position: center;
-    */
-}
-
-/* Remove inner section backgrounds to prevent double-box look */
-.content > * > * {
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* ===========================
-   SECTION SPECIFIC STYLES
-=========================== */
-.about p { margin-bottom: 0 !important; line-height: 1; }
-.interests-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px 15px;
-    list-style: none;
-    padding: 0;
-}
-.interests-list li { white-space: nowrap; padding: 1px 8px; }
-
-/* Reduced spacing for specific sections */
-.interests p,
-.affiliations p,
-.education p {
-    line-height: 1.2;
-    margin: 0;
-}
-
-/* Publications List */
-.publications ul,
-.gee-apps ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.publications li,
-.gee-apps li {
-    padding: 2px 0;
-    line-height: 1.2;
-}
-
-/* Links */
-a {
-    color: #0073e6 !important;
+.content a:not(.pdf-link):not(.cv-btn):not(.green-lab-link) {
+    color: #2a9d8f !important;
     text-decoration: none !important;
+    font-weight: 600;
+    background: rgba(42, 157, 143, 0.08) !important;
+    padding: 2px 8px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(42, 157, 143, 0.3) !important;
+    transition: all 0.2s ease;
+    display: inline-flex !important;
+    align-items: center;
 }
-a:hover { color: #005bb5 !important; text-decoration: underline !important; }
-a:visited { color: #0073e6 !important; }
-
-/* ===========================
-   QUOTE STYLING
-=========================== */
-.quote {
-    font-family: "American Typewriter", serif !important;
-    font-size: 0.8em !important;
-    text-align: center;
-    color: #222;
-    margin-top: 10px;
-    padding: 8px 10px 4px;
-    line-height: 1.4 !important;
-}
-.quote-author {
-    font-size: 1em !important;
-    font-weight: bold;
-    display: block;
-    margin-top: 2px;
+.content a:not(.pdf-link):not(.cv-btn):not(.green-lab-link):hover {
+    background: #2a9d8f !important;
+    color: white !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.4) !important;
 }
 
-/* ===========================
-   IMAGE STYLING
-=========================== */
-.map-image {
-    width: 100%;
-    max-width: 250px;
-    margin: 15px auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* ===========================
-   TITLES
-=========================== */
-h1, h2 {
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 8px;
-    color: #000 !important;
-}
-.journey-title {
-    font-family: "Futura", serif;
-    font-size: 1.3em;
-    font-weight: bold !important;
-    text-align: center;
-    color: #000 !important;
-    margin: 25px 0 10px;
-}
-
-.pdf-link,
-.pdf-link:hover {
-    all: revert;
-}
-
+.pdf-link, .pdf-link:hover { all: revert; }
 .pdf-link {
     display: inline-flex !important;
     align-items: center;
@@ -235,9 +197,24 @@ h1, h2 {
     border: 1px solid rgba(42, 157, 143, 0.3) !important;
     transition: all 0.2s ease;
 }
-
 .pdf-link:hover {
     background: #2a9d8f !important;
     color: white !important;
     text-decoration: none !important;
     box-shadow: 0 4px 12px rgba(42, 157, 143, 0.4) !important;
+}
+
+.green-lab-link {
+    display: inline-flex !important;
+    align-items: center;
+    text-decoration: none !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(42, 157, 143, 0.3) !important;
+    padding: 3px 8px !important;
+    background: rgba(42, 157, 143, 0.08) !important;
+    transition: all 0.2s ease;
+}
+.green-lab-link:hover {
+    background: rgba(42, 157, 143, 0.2) !important;
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.4) !important;
+}
