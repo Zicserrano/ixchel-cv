@@ -223,10 +223,10 @@ h1, h2 {
     color: #c0392b !important;
     font-weight: 600;
     text-decoration: none !important;
-    background: rgba(192, 57, 43, 0.08) !important;
+    background: rgba(43, 83, 196, 0.08) !important;
     padding: 3px 10px !important;
     border-radius: 20px;
-    border: 1px solid rgba(192, 57, 43, 0.3);
+    border: 1px solid rgba(43, 83, 196, 0.08);
     transition: all 0.2s ease;
 }
 
@@ -234,5 +234,5 @@ h1, h2 {
     background: #c0392b !important;
     color: white !important;
     text-decoration: none !important;
-    box-shadow: 0 3px 10px rgba(192, 57, 43, 0.3);
+    box-shadow: 0 3px 10px rgba(43, 83, 196, 0.08);
 }
