@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="bg-wrapper">
+      <img class="bg-img" src="240909-AZO1109-CUBES-CS-2_SE(UL).jpg" alt="SEM background">
+      <canvas id="particle-canvas"></canvas>
+    </div>
     <div class="container">
         <aside class="profile">
             <img src="profile.jpg" alt="Giuseppe Baldassarre" class="profile-img">
@@ -172,5 +176,76 @@
             
         </main>
     </div>
+
+<script>
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+class Glow {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = canvas.height * (0.25 + Math.random() * 0.55);
+    this.maxAlpha = 0.3 + Math.random() * 0.45;
+    this.alpha = 0;
+    this.radius = 6 + Math.random() * 18;
+    this.delay = Math.random() * 6000;
+    this.startTime = performance.now() + this.delay;
+    this.fadeIn  = 400 + Math.random() * 800;
+    this.hold    = 300 + Math.random() * 1200;
+    this.fadeOut = 500 + Math.random() * 1000;
+    this.total   = this.fadeIn + this.hold + this.fadeOut;
+    this.done = false;
+    const hues = [45, 55, 185, 190, 200];
+    this.hue = hues[Math.floor(Math.random() * hues.length)];
+    this.sat = 60 + Math.random() * 40;
+  }
+  update(now) {
+    const elapsed = now - this.startTime;
+    if (elapsed < 0) return;
+    if (elapsed < this.fadeIn) {
+      this.alpha = this.maxAlpha * (elapsed / this.fadeIn);
+    } else if (elapsed < this.fadeIn + this.hold) {
+      this.alpha = this.maxAlpha;
+    } else if (elapsed < this.total) {
+      this.alpha = this.maxAlpha * (1 - (elapsed - this.fadeIn - this.hold) / this.fadeOut);
+    } else {
+      this.done = true;
+    }
+  }
+  draw() {
+    if (this.alpha <= 0) return;
+    const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+    grad.addColorStop(0,   `hsla(${this.hue}, ${this.sat}%, 95%, ${this.alpha})`);
+    grad.addColorStop(0.4, `hsla(${this.hue}, ${this.sat}%, 80%, ${this.alpha * 0.6})`);
+    grad.addColorStop(1,   `hsla(${this.hue}, ${this.sat}%, 70%, 0)`);
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+  }
+}
+
+const glows = Array.from({ length: 40 }, () => new Glow());
+
+function animate(now) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < glows.length; i++) {
+    glows[i].update(now);
+    glows[i].draw();
+    if (glows[i].done) glows[i] = new Glow();
+  }
+  requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
+</script>
 </body>
+                    
 </html>
