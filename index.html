@@ -203,9 +203,9 @@ class Glow {
     this.fadeOut = 500 + Math.random() * 1000;
     this.total   = this.fadeIn + this.hold + this.fadeOut;
     this.done = false;
-    const hues = [45, 55, 185, 190, 200];
+    const hues = [10, 18, 25, 32, 38];  // brick red → burnt orange → bronze → gold
     this.hue = hues[Math.floor(Math.random() * hues.length)];
-    this.sat = 60 + Math.random() * 40;
+    this.sat = 70 + Math.random() * 30;
   }
   update(now) {
     const elapsed = now - this.startTime;
@@ -223,9 +223,9 @@ class Glow {
   draw() {
     if (this.alpha <= 0) return;
     const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
-    grad.addColorStop(0,   `hsla(${this.hue}, ${this.sat}%, 95%, ${this.alpha})`);
-    grad.addColorStop(0.4, `hsla(${this.hue}, ${this.sat}%, 80%, ${this.alpha * 0.6})`);
-    grad.addColorStop(1,   `hsla(${this.hue}, ${this.sat}%, 70%, 0)`);
+    grad.addColorStop(0,   `hsla(${this.hue}, ${this.sat}%, 90%, ${this.alpha})`);
+    grad.addColorStop(0.4, `hsla(${this.hue}, ${this.sat}%, 65%, ${this.alpha * 0.6})`);
+    grad.addColorStop(1,   `hsla(${this.hue}, ${this.sat}%, 40%, 0)`);
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     ctx.fillStyle = grad;
