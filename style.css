@@ -117,7 +117,14 @@ body {
 .interests p, .affiliations p, .education p { line-height: 1.2; margin: 0; }
 
 .publications ul, .gee-apps ul { list-style: none; padding: 0; margin: 0; }
-.publications li, .gee-apps li { padding: 2px 0; line-height: 1.2; }
+
+.publications li, .gee-apps li {
+    padding: 2px 0;
+    line-height: 1.8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
 h1, h2 { font-size: 1.2em; margin-top: 0; margin-bottom: 8px; color: #000 !important; }
 .journey-title {
@@ -181,6 +188,11 @@ a:visited { color: #2a9d8f !important; }
 /* ===========================
    RIGHT CONTENT COLUMN
 =========================== */
+.content a:not(.pdf-link):not(.cv-btn):not(.green-lab-link) {
+    display: inline-flex !important;
+    width: auto !important;
+}
+
 .content a:not(.pdf-link):not(.cv-btn):not(.green-lab-link) {
     color: #2a9d8f !important;
     text-decoration: none !important;
