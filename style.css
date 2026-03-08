@@ -41,9 +41,14 @@ strong { font-weight: 500; }
     padding: 22px 40px;
     display: flex; align-items: center; justify-content: space-between;
 }
-.topbar-name { display: none; }
-.topbar.solid .topbar-name { color: var(--dark); }
-
+.topbar-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05em; font-weight: 400; font-style: italic;
+    letter-spacing: 0.02em;
+    color: rgba(255,255,255,0.9);
+    transition: color 0.3s;
+}
+.topbar.solid .topbar-name { color: var(--copper); }
 .topbar-nav { display: flex; gap: 24px; }
 .topbar-nav a {
     font-size: 0.7em; font-weight: 400; letter-spacing: 0.07em;
