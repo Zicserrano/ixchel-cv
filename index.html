@@ -456,8 +456,10 @@ function toggleCard(id) {
     const isOpen = reveal.classList.contains('open');
     // close all
     document.querySelectorAll('.interest-reveal').forEach(r => r.classList.remove('open'));
+    document.querySelectorAll('.interest-card').forEach(c => c.style.flexBasis = '');
     if (!isOpen) {
         reveal.classList.add('open');
+        card.style.flexBasis = '100%';
         if (id === 'travel') startGlobe();
     }
 }
