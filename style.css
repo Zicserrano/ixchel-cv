@@ -303,11 +303,11 @@ a.conf-item:hover .conf-arrow { color: var(--copper); }
 
 /* Interest Cards */
 .interest-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
 }
-.interest-card { display: flex; flex-direction: column; }
+.interest-card { display: flex; flex-direction: column; flex: 1 1 calc(50% - 8px); min-width: 120px; }
 .interest-front {
     display: flex; align-items: center; gap: 8px;
     padding: 9px 12px;
@@ -318,6 +318,7 @@ a.conf-item:hover .conf-arrow { color: var(--copper); }
     transition: background 0.2s, border-color 0.2s;
     font-size: 0.85em; color: var(--copper); font-weight: 500;
     user-select: none;
+    height: 100%;
 }
 .interest-front:hover { background: rgba(181,101,29,0.13); border-color: var(--copper); }
 .interest-hint {
@@ -329,6 +330,7 @@ a.conf-item:hover .conf-arrow { color: var(--copper); }
     display: none;
     padding: 10px 4px 4px;
     animation: fadeSlide 0.3s ease;
+    width: 100%;
 }
 .interest-reveal.open { display: block; }
 @keyframes fadeSlide { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
