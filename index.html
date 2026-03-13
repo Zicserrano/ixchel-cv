@@ -109,31 +109,65 @@
                     </ul>
                 </div>
                 <div class="info-block">
-    <h3 class="block-label">Personal</h3>
-    <div class="interest-grid">
-        <div class="interest-card">
-            <div class="interest-front">🚂<span>Travelling</span></div>
-            <div class="interest-back">Lived in Mexico, France, Germany & Portugal. Every city teaches me something new about materials, people, and myself.</div>
-        </div>
-        <div class="interest-card">
-            <div class="interest-front">📖<span>Reading</span></div>
-            <div class="interest-back">From science essays to fiction — reading keeps my mind curious beyond the lab.</div>
-        </div>
-        <div class="interest-card">
-            <div class="interest-front">🏃🏽‍♀️<span>Sports</span></div>
-            <div class="interest-back">Running and cycling through Lisbon's hills — movement clears the mind after long hours at the XPS instrument.</div>
-        </div>
-        <div class="interest-card">
-            <div class="interest-front">👩‍🦽<span>Disability Advocacy</span></div>
-            <div class="interest-back">Committed to making science and public spaces more accessible and inclusive for everyone.</div>
-        </div>
-        <div class="interest-card">
-            <div class="interest-front">🌱<span>Sustainability</span></div>
-            <div class="interest-back">Green Lab certified — sustainability isn't just my research, it's how I try to live.</div>
-        </div>
-    </div>
-</div>
-               
+                    <h3 class="block-label">Personal</h3>
+                    <div class="interest-grid">
+
+                        <!-- Travelling — spinning globe -->
+                        <div class="interest-card" id="card-travel">
+                            <div class="interest-front" onclick="toggleCard('travel')">
+                                <span class="interest-emoji">🚂</span>
+                                <span class="interest-label">Travelling</span>
+                                <span class="interest-hint">click ↓</span>
+                            </div>
+                            <div class="interest-reveal" id="reveal-travel">
+                                <canvas id="globe-canvas" width="180" height="180"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Reading -->
+                        <div class="interest-card" id="card-reading">
+                            <div class="interest-front" onclick="toggleCard('reading')">
+                                <span class="interest-emoji">📖</span>
+                                <span class="interest-label">Reading</span>
+                            </div>
+                        </div>
+
+                        <!-- Sports — Lisbon map -->
+                        <div class="interest-card" id="card-sports">
+                            <div class="interest-front" onclick="toggleCard('sports')">
+                                <span class="interest-emoji">🏃🏽‍♀️</span>
+                                <span class="interest-label">Sports</span>
+                                <span class="interest-hint">click ↓</span>
+                            </div>
+                            <div class="interest-reveal" id="reveal-sports">
+                                <iframe
+                                    src="https://www.openstreetmap.org/export/embed.html?bbox=-9.1950%2C38.6950%2C-9.1250%2C38.7350&layer=mapnik"
+                                    width="100%" height="160"
+                                    style="border:none; border-radius:4px;"
+                                    loading="lazy">
+                                </iframe>
+                                <p class="map-caption">Lisbon · Parque das Nações running area</p>
+                            </div>
+                        </div>
+
+                        <!-- Disability Advocacy -->
+                        <div class="interest-card" id="card-advocacy">
+                            <div class="interest-front" onclick="toggleCard('advocacy')">
+                                <span class="interest-emoji">👩‍🦽</span>
+                                <span class="interest-label">Disability Advocacy</span>
+                            </div>
+                        </div>
+
+                        <!-- Sustainability -->
+                        <div class="interest-card" id="card-sustain">
+                            <div class="interest-front" onclick="toggleCard('sustain')">
+                                <span class="interest-emoji">🌱</span>
+                                <span class="interest-label">Sustainability</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -318,7 +352,7 @@
         <div class="contact-grid">
             <div>
                 <h2 class="section-title">Get in Touch</h2>
-                <p class="body-lg">Open to academic and job opportunities.</p>
+                <p class="body-lg">Open to research collaborations, academic opportunities, and conversations about nanomaterials and surface science.</p>
                 <div class="contact-links">
                     <a href="mailto:z.serrano@campus.fct.unl.pt" class="c-link"><i class="fas fa-envelope"></i>z.serrano@campus.fct.unl.pt</a>
                     <a href="https://www.linkedin.com/in/zulema-cruz-serrano-552982168/" target="_blank" class="c-link"><i class="fab fa-linkedin"></i>LinkedIn Profile</a>
@@ -412,6 +446,137 @@ function animate(now) {
     requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
+</script>
+<!-- Interest card interactions -->
+<script>
+function toggleCard(id) {
+    const reveal = document.getElementById('reveal-' + id);
+    const card = document.getElementById('card-' + id);
+    if (!reveal) return;
+    const isOpen = reveal.classList.contains('open');
+    // close all
+    document.querySelectorAll('.interest-reveal').forEach(r => r.classList.remove('open'));
+    if (!isOpen) {
+        reveal.classList.add('open');
+        if (id === 'travel') startGlobe();
+    }
+}
+
+// Spinning globe using Canvas
+let globeRunning = false;
+function startGlobe() {
+    if (globeRunning) return;
+    globeRunning = true;
+    const canvas = document.getElementById('globe-canvas');
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height, R = 80;
+    const cx = W/2, cy = H/2;
+    let angle = 0;
+
+    // Rough continent outlines as lat/lon points [lat, lon]
+    const continents = [
+        // Europe
+        [[35,10],[45,0],[55,5],[60,20],[55,30],[45,35],[35,25],[30,15],[35,10]],
+        // Africa
+        [[35,10],[12,-18],[-5,-10],[-35,20],[-20,45],[10,50],[20,40],[35,30],[35,10]],
+        // North America
+        [[70,-140],[70,-60],[45,-55],[30,-80],[10,-85],[20,-105],[30,-110],[45,-125],[60,-140],[70,-140]],
+        // South America
+        [[10,-75],[0,-50],[-15,-40],[-55,-68],[-40,-70],[-20,-70],[0,-60],[10,-75]],
+        // Asia
+        [[35,30],[45,35],[60,30],[70,60],[70,140],[40,130],[20,110],[10,100],[20,60],[35,50],[35,30]],
+        // Australia
+        [[-15,130],[-20,150],[-40,148],[-38,140],[-30,115],[-20,115],[-15,130]],
+    ];
+
+    function project(lat, lon, rot) {
+        const phi = lat * Math.PI / 180;
+        const lam = (lon + rot) * Math.PI / 180;
+        const x = R * Math.cos(phi) * Math.sin(lam);
+        const y = R * Math.sin(phi);
+        const z = Math.cos(phi) * Math.cos(lam);
+        return { x: cx + x, y: cy - y, visible: z > 0 };
+    }
+
+    function drawGlobe(rot) {
+        ctx.clearRect(0, 0, W, H);
+        // Ocean
+        const grad = ctx.createRadialGradient(cx-20, cy-20, 5, cx, cy, R);
+        grad.addColorStop(0, '#2a9d8f33');
+        grad.addColorStop(1, '#1a7a8a22');
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, Math.PI*2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(42,157,143,0.4)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        // Grid lines
+        ctx.strokeStyle = 'rgba(42,157,143,0.12)';
+        ctx.lineWidth = 0.5;
+        for (let lat = -60; lat <= 60; lat += 30) {
+            ctx.beginPath();
+            let first = true;
+            for (let lon = -180; lon <= 180; lon += 5) {
+                const p = project(lat, lon, rot);
+                if (p.visible) { first ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y); first = false; }
+                else first = true;
+            }
+            ctx.stroke();
+        }
+        for (let lon = 0; lon < 360; lon += 30) {
+            ctx.beginPath();
+            let first = true;
+            for (let lat = -90; lat <= 90; lat += 5) {
+                const p = project(lat, lon, rot);
+                if (p.visible) { first ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y); first = false; }
+                else first = true;
+            }
+            ctx.stroke();
+        }
+
+        // Continents
+        ctx.fillStyle = 'rgba(181,101,29,0.55)';
+        ctx.strokeStyle = 'rgba(181,101,29,0.8)';
+        ctx.lineWidth = 1;
+        continents.forEach(pts => {
+            ctx.beginPath();
+            let started = false;
+            pts.forEach(([lat, lon]) => {
+                const p = project(lat, lon, rot);
+                if (p.visible) {
+                    started ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y);
+                    started = true;
+                }
+            });
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+        });
+
+        // Highlight Lisbon
+        const lisbon = project(38.7, -9.1, rot);
+        if (lisbon.visible) {
+            ctx.beginPath();
+            ctx.arc(lisbon.x, lisbon.y, 4, 0, Math.PI*2);
+            ctx.fillStyle = '#fff';
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(lisbon.x, lisbon.y, 6, 0, Math.PI*2);
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+        }
+    }
+
+    function animate() {
+        angle += 0.4;
+        drawGlobe(angle);
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
 </script>
 </body>
 </html>
