@@ -315,3 +315,40 @@ a.conf-item:hover .conf-arrow { color: var(--copper); }
     .tl-item, .edu-item { grid-template-columns: 1fr; gap: 4px; }
     .footer { flex-direction: column; gap: 6px; padding: 18px 24px; text-align: center; }
 }
+
+/* Interest Cards */
+.interest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+.interest-card {
+    height: 80px;
+    perspective: 600px;
+    cursor: default;
+}
+.interest-front, .interest-back {
+    position: absolute; inset: 0;
+    border-radius: 4px;
+    padding: 10px 12px;
+    backface-visibility: hidden;
+    transition: transform 0.45s ease;
+    display: flex; align-items: center;
+}
+.interest-card { position: relative; }
+.interest-front {
+    background: rgba(181,101,29,0.07);
+    border: 1px solid rgba(181,101,29,0.18);
+    gap: 8px;
+    font-size: 0.88em; color: var(--copper); font-weight: 500;
+    transform: rotateY(0deg);
+}
+.interest-front span { font-size: 0.9em; }
+.interest-back {
+    background: var(--copper);
+    color: white;
+    font-size: 0.75em; line-height: 1.5;
+    transform: rotateY(180deg);
+}
+.interest-card:hover .interest-front { transform: rotateY(-180deg); }
+.interest-card:hover .interest-back { transform: rotateY(0deg); }
